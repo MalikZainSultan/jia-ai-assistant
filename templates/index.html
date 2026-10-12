@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jia AI - Personal Robot & Autonomous Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Top Futuristic Header -->
+    <header class="top-nav">
+        <div class="brand">
+            <div class="brand-pulse"></div>
+            <h1 class="brand-title"><span class="highlight">AI</span> Assistance</h1>
+            <span class="version-tag">JIA v2.0 • CORE</span>
+        </div>
+
+        <div class="user-profile">
+            <div class="avatar-ring">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Zain Sultan" class="avatar-img">
+                <div class="status-dot"></div>
+            </div>
+            <div class="user-meta">
+                <div class="user-name">Zain Sultan</div>
+                <div class="user-badge">👑 BOSS & CREATOR</div>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <button class="icon-btn" id="soundToggleBtn" title="Toggle Sound">
+                <span class="btn-icon" id="soundIcon">🔊</span>
+            </button>
+            <div class="premium-badge">
+                <span class="star-icon">★</span> PREMIUM BOSS ACCESS
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="dashboard-grid">
+        <!-- Left Panel: Previous History & Modules -->
+        <aside class="panel left-panel">
+            <h2 class="panel-heading">Previous Search History</h2>
+            <div class="module-cards">
+                <div class="module-card" data-cmd="check current weather">
+                    <div class="card-header">
+                        <span class="card-icon">🌤️</span>
+                        <span class="card-title">WEATHER</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">95%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="module-card" data-cmd="open Google Chrome">
+                    <div class="card-header">
+                        <span class="card-icon">🌐</span>
+                        <span class="card-title">CHROME / EDGE</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">88%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 88%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="module-card" data-cmd="change system wallpaper">
+                    <div class="card-header">
+                        <span class="card-icon">🖼️</span>
+                        <span class="card-title">WALLPAPER ENGINE</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">92%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 92%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="module-card" data-cmd="teach me English">
+                    <div class="card-header">
+                        <span class="card-icon">🎓</span>
+                        <span class="card-title">ENGLISH TEACHER</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">99%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 99%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="module-card" data-cmd="open Notepad">
+                    <div class="card-header">
+                        <span class="card-icon">💻</span>
+                        <span class="card-title">LAPTOP APPS</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">76%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 76%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="module-card" data-cmd="create a new folder on my desktop">
+                    <div class="card-header">
+                        <span class="card-icon">📁</span>
+                        <span class="card-title">DESKTOP FILES</span>
+                    </div>
+                    <div class="progress-container">
+                        <span class="progress-val">84%</span>
+                        <div class="progress-bar"><div class="fill" style="width: 84%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loyalty Mini Badge -->
+            <div class="loyalty-box" data-cmd="who is your boss and creator?">
+                <div class="loyalty-icon">🤖</div>
+                <div class="loyalty-text">
+                    <div class="loyalty-title">LOYAL ASSISTANT</div>
+                    <div class="loyalty-sub">Dedicated exclusively to Boss Zain Sultan</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Stage: The Holographic Robot AI Face & Core -->
+        <section class="center-stage">
+            <div class="hologram-wrapper">
+                <!-- Rotating Gyroscopic Outer Rings -->
+                <div class="gyro-ring ring-outer"></div>
+                <div class="gyro-ring ring-middle"></div>
+                <div class="gyro-ring ring-inner"></div>
+
+                <!-- Central Pulsing AI Orb -->
+                <div class="ai-sphere" id="aiSphere">
+                    <canvas id="waveformCanvas" width="400" height="400"></canvas>
+                    <div class="sphere-glow"></div>
+                    <div class="sphere-core">
+                        <button class="mic-action-btn" id="voiceMicBtn" title="Speak to Jia">
+                            <svg class="mic-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Status & Transcript -->
+            <div class="speech-status-block">
+                <div class="transcription-label" id="transcriptionText">"What can I do for you today, Boss Zain?"</div>
+                <div class="live-status-pill" id="statusPill">
+                    <span class="pulse-indicator"></span>
+                    <span id="statusLabel">Ready for Voice Command</span>
+                </div>
+            </div>
+
+            <!-- Jia's Spoken Response Terminal Card -->
+            <div class="response-glass-card" id="responseCard">
+                <div class="resp-header">
+                    <div class="resp-bot-tag">JIA • NEURAL AUDIO ACTIVE</div>
+                    <div class="resp-time" id="respTime">Just Now</div>
+                </div>
+                <div class="resp-body" id="respBody">
+                    Hello Boss Zain! I am Jia, your personal intelligent AI assistant and autonomous robot. 
+                    Click the glowing microphone button to talk to me directly, or type your instructions below. 
+                    I have full control over your laptop's applications, wallpaper, files, and system tools!
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel: Command Execution & Details Feed -->
+        <aside class="panel right-panel">
+            <h2 class="panel-heading">Searched By Command</h2>
+            
+            <div class="command-details-box">
+                <div class="detail-row">
+                    <span class="detail-label">Title</span>
+                    <span class="detail-value" id="detailTitle">Autonomous Laptop Control</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Category</span>
+                    <span class="detail-value" id="detailCategory">System Operator</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Search Confidence</span>
+                    <span class="detail-value highlight-cyan">99.4% • Instant</span>
+                </div>
+            </div>
+
+            <!-- Quick Action Interactive Buttons -->
+            <div class="quick-actions-section">
+                <h3 class="sub-heading">Direct Laptop Actions</h3>
+                <div class="action-buttons-grid">
+                    <button class="action-tile-btn" data-cmd="open Google Chrome">
+                        <span class="tile-icon">🌐</span>
+                        <span class="tile-text">Open Chrome</span>
+                    </button>
+                    <button class="action-tile-btn" data-cmd="open Microsoft Edge">
+                        <span class="tile-icon">🧭</span>
+                        <span class="tile-text">Open Edge</span>
+                    </button>
+                    <button class="action-tile-btn" data-cmd="change desktop wallpaper">
+                        <span class="tile-icon">🖼️</span>
+                        <span class="tile-text">Set Wallpaper</span>
+                    </button>
+                    <button class="action-tile-btn" data-cmd="open Notepad">
+                        <span class="tile-icon">📝</span>
+                        <span class="tile-text">Open Notepad</span>
+                    </button>
+                    <button class="action-tile-btn" data-cmd="who is your boss?">
+                        <span class="tile-icon">👑</span>
+                        <span class="tile-text">Boss Identity</span>
+                    </button>
+                    <button class="action-tile-btn" data-cmd="teach me English">
+                        <span class="tile-icon">🎓</span>
+                        <span class="tile-text">English Mentor</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Preview Box -->
+            <div class="preview-box" id="previewBox">
+                <div class="preview-title" id="previewTitle">Current Wallpaper Preview</div>
+                <img src="/static/preview_placeholder.jpg" alt="Wallpaper Preview" id="previewImg" class="preview-image" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80'">
+            </div>
+        </aside>
+    </main>
+
+    <!-- Bottom Futuristic Floating Dock & Chat Bar -->
+    <footer class="bottom-dock">
+        <div class="dock-actions">
+            <button class="dock-btn active" title="Dashboard Home">🏠</button>
+            <button class="dock-btn" id="dockMicBtn" title="Hold / Click to Speak">🎙️</button>
+            <button class="dock-btn" id="soundBadgeBtn" title="English Neural Voice Active">🗣️</button>
+        </div>
+
+        <form class="dock-input-form" id="commandForm">
+            <input type="text" id="commandInput" class="dock-input" placeholder="Speak or type a command for Boss Zain... (e.g. 'open Chrome', 'change wallpaper', 'check weather')" autocomplete="off">
+            <button type="submit" class="dock-send-btn" id="sendBtn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </form>
+    </footer>
+
+    <!-- Audio Player Element for Neural Voice -->
+    <audio id="neuralAudioPlayer" preload="auto"></audio>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
